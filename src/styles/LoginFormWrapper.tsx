@@ -15,6 +15,13 @@ const LoginFormWrapper = styled.form`
     margin-left: 20px;
     margin-right: 20px;
   }
+  @media only screen and (min-width: 601px) {
+    padding-top: 30px;
+    padding-bottom: 50px;
+    margin-top: 100px;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
 `;
 
 export default LoginFormWrapper;

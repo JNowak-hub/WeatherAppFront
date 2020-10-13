@@ -5,6 +5,7 @@ import NavbarItem from "../styles/NavbarItem";
 import { Link } from "react-router-dom";
 import NavbarButtonWrapper from "../styles/NavbarButtonWrapper";
 import TimeWrapper from "../styles/TimeWrapper";
+import LinkWrapper from "../styles/LinkWrapper";
 const Navbar = () => {
   const [time, setTime] = React.useState("");
 
@@ -35,19 +36,19 @@ const Navbar = () => {
         <TimeWrapper>Time: {time}</TimeWrapper>
       </NavbarItem>
       <NavbarItem>
-        <Link to="/">
+        <LinkWrapper href="/">
           <NavbarButtonWrapper>Home</NavbarButtonWrapper>
-        </Link>
+        </LinkWrapper>
       </NavbarItem>
       <NavbarItem>
-        <Link to="/login">
+        <LinkWrapper href="/login">
           <NavbarButtonWrapper>Login</NavbarButtonWrapper>
-        </Link>
+        </LinkWrapper>
       </NavbarItem>
       <NavbarItem>
-        <Link to="/signin">
+        <LinkWrapper href="/signin">
           <NavbarButtonWrapper>Sign In</NavbarButtonWrapper>
-        </Link>
+        </LinkWrapper>
       </NavbarItem>
     </NavbarWrapper>
   );
