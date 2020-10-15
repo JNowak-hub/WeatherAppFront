@@ -20,11 +20,11 @@ const ButtonWrapper = styled.div`
     cursor: pointer;
   }
   @media only screen and (min-width: 601px) {
-    border: 1px solid #000000;
+    border: 1px solid #f6fb1b;
     box-sizing: border-box;
     width: 200px;
     margin-top: 40px;
-    height: 30px;
+    height: 35px;
     border-radius: 20px;
   }
   background: rgba(19, 50, 162, 0.85);
@@ -37,6 +37,7 @@ const ButtonWrapper = styled.div`
     background: rgba(19, 50, 162, 0.14);
     cursor: pointer;
   }
+  color: #f6fb1b;
 `;
 
 export default ButtonWrapper;

@@ -2,6 +2,7 @@ import React from "react";
 import FormWrapper from "../styles/LoginFormWrapper";
 import InputWrapper from "../styles/InputFieldWrapper";
 import ButtonWrapper from "../styles/ButtonWrapper";
+import LabelStyled from "../styles/LabelStyle";
 
 const SinginPage = () => {
   const provider = "local";
@@ -31,25 +32,25 @@ const SinginPage = () => {
 
   return (
     <FormWrapper>
-      <label>Insert User Name</label>
+      <LabelStyled>Insert User Name</LabelStyled>
       <InputWrapper
         type="text"
         value={userName}
         onChange={(event) => setUserName(event.target.value)}
       />
-      <label>Name</label>
+      <LabelStyled>Name</LabelStyled>
       <InputWrapper
         type="text"
         value={name}
         onChange={(event) => setName(event.target.value)}
       />
-      <label>Email adress</label>
+      <LabelStyled>Email adress</LabelStyled>
       <InputWrapper
         type="text"
         value={email}
         onChange={(event) => setEmail(event.target.value)}
       />
-      <label>Password</label>
+      <LabelStyled>Password</LabelStyled>
       <InputWrapper
         type="password"
         value={password}

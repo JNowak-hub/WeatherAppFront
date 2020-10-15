@@ -3,6 +3,7 @@ import LoginFormWrapper from "../styles/LoginFormWrapper";
 import InputFieldWrapper from "../styles/InputFieldWrapper";
 import ButtonWrapper from "../styles/ButtonWrapper";
 import { useHistory } from "react-router-dom";
+import LabelStyled from "../styles/LabelStyle";
 
 const LoginPage = () => {
   const [userName, setUserName] = React.useState("");
@@ -27,13 +28,13 @@ const LoginPage = () => {
 
   return (
     <LoginFormWrapper>
-      <label>UserName</label>
+      <LabelStyled>UserName</LabelStyled>
       <InputFieldWrapper
         type="name"
         value={userName}
         onChange={(event) => setUserName(event.target.value)}
       ></InputFieldWrapper>
-      <label>Password</label>
+      <LabelStyled>Password</LabelStyled>
       <InputFieldWrapper
         type="password"
         value={password}
