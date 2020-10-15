@@ -36,7 +36,7 @@ const Navbar = () => {
         <TimeWrapper>Time: {time}</TimeWrapper>
       </NavbarItem>
       <NavbarItem>
-        <LinkWrapper href="/">
+        <LinkWrapper href="/home">
           <NavbarButtonWrapper>Home</NavbarButtonWrapper>
         </LinkWrapper>
       </NavbarItem>
