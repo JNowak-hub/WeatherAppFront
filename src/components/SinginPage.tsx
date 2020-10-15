@@ -3,6 +3,7 @@ import FormWrapper from "../styles/LoginFormWrapper";
 import InputWrapper from "../styles/InputFieldWrapper";
 import ButtonWrapper from "../styles/ButtonWrapper";
 import LabelStyled from "../styles/LabelStyle";
+import LinkWrapper from "../styles/LinkWrapper";
 
 const SinginPage = () => {
   const provider = "local";
@@ -56,7 +57,10 @@ const SinginPage = () => {
         value={password}
         onChange={(event) => setPassword(event.target.value)}
       />
-      <ButtonWrapper onClick={signIn}>Send Form</ButtonWrapper>
+      <ButtonWrapper onClick={signIn}>Registrate</ButtonWrapper>
+      <div>
+        <LinkWrapper href="/login">Log in</LinkWrapper>
+      </div>
     </FormWrapper>
   );
 };
