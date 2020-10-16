@@ -4,31 +4,51 @@ import InputWrapper from "../styles/InputFieldWrapper";
 import ButtonWrapper from "../styles/ButtonWrapper";
 import LabelStyled from "../styles/LabelStyle";
 import LinkWrapper from "../styles/LinkWrapper";
+import { useHistory } from "react-router-dom";
 
 const SinginPage = () => {
+  let history = useHistory();
   const provider = "local";
   const [userName, setUserName] = React.useState("");
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
+  const conflictStatus = (text: string) => {
+    setEmail("");
+    setName("");
+    setPassword("");
+    setUserName("");
+    alert(text);
+  };
+
   const signIn = async () => {
-    const response = await fetch("http://localhost:8080/api/login/signIn", {
-      method: "POST",
-      credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        userName: userName,
-        password: password,
-        email: email,
-        name: name,
-        provider: provider,
-      }),
+    const response = await fetch(
+      "https://weather-web-app-backend.azurewebsites.net/api/auth/signIn",
+      {
+        method: "POST",
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          userName: userName,
+          password: password,
+          email: email,
+          name: name,
+          provider: provider,
+        }),
+      }
+    ).then(async (response) => {
+      if (response.ok) {
+        history.push("/login");
+        alert("signed as: " + userName + " login to continue");
+      }
+      if (response.status === 409) {
+        conflictStatus("cannot create user");
+      }
     });
-    const data = await response.json();
   };
 
   return (

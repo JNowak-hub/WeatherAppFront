@@ -10,19 +10,22 @@ const LoginPage = () => {
   const [password, setPassword] = React.useState("");
   const history = useHistory();
   const logIn = async () => {
-    const response = await fetch("http://localhost:8080/api/login", {
-      method: "POST",
-      credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Location: "",
-      },
-      body: JSON.stringify({
-        userName: userName,
-        password: password,
-      }),
-    });
+    const response = await fetch(
+      "https://weather-web-app-backend.azurewebsites.net/api/auth/login",
+      {
+        method: "POST",
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Location: "",
+        },
+        body: JSON.stringify({
+          userName: userName,
+          password: password,
+        }),
+      }
+    );
     history.push("/Home");
   };
 
